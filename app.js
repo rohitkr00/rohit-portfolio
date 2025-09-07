@@ -377,7 +377,14 @@ function initMiscellaneous() {
     if (downloadResumeBtn) {
         downloadResumeBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showNotification('Resume download feature would be available in production!', 'info');
+            const resumeUrl = 'Rohit Kumar - Resume_v1.pdf'; // Update the path accordingly
+            const link = document.createElement('a');
+            link.href = resumeUrl;
+            link.download = 'Rohit_Kumar_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            // showNotification('Resume download feature would be available in production!', 'info');
         });
     }
     
